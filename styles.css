@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.greeting {
+    color: white;
+    font-size: 3.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin: 20px 0;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #e60073;
+    }
+    to {
+        text-shadow: 0 0 10px #fff, 0 0 20px #ff4da6, 0 0 30px #ff4da6;
+    }
+}
+
+/* Snowflake animation */
+.snowflakes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.snowflake {
+    color: white;
+    font-size: 1.5em;
+    position: absolute;
+    top: -20px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+/* Set different animation durations and delays for each snowflake */
+.snowflake:nth-child(1) { left: 10%; animation-duration: 10s; animation-delay: 1s; }
+.snowflake:nth-child(2) { left: 20%; animation-duration: 12s; animation-delay: 2s; }
+.snowflake:nth-child(3) { left: 30%; animation-duration: 8s; animation-delay: 3s; }
+.snowflake:nth-child(4) { left: 40%; animation-duration: 15s; animation-delay: 4s; }
+.snowflake:nth-child(5) { left: 50%; animation-duration: 11s; animation-delay: 5s; }
+.snowflake:nth-child(6) { left: 60%; animation-duration: 13s; animation-delay: 6s; }
+.snowflake:nth-child(7) { left: 70%; animation-duration: 9s; animation-delay: 7s; }
+.snowflake:nth-child(8) { left: 80%; animation-duration: 14s; animation-delay: 8s; }
+.snowflake:nth-child(9) { left: 90%; animation-duration: 10s; animation-delay: 9s; }
+.snowflake:nth-child(10) { left: 95%; animation-duration: 12s; animation-delay: 10s; }
+
+/* Cute Penguin */
+.penguin {
+    margin-top: 30px;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 30px auto;
+}
+
+.penguin-body {
+    width: 100px;
+    height: 100px;
+    background: #000;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    position: relative;
+}
+
+.penguin-body::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    top: 10px;
+    left: 10px;
+}
+
+.penguin-face {
+    position: absolute;
+    top: 25px;
+    width: 100%;
+}
+
+.eye {
+    width: 12px;
+    height: 12px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.eye.left {
+    left: 25px;
+}
+
+.eye.right {
+    right: 25px;
+}
+
+.beak {
+    width: 20px;
+    height: 20px;
+    background: #ff9800;
+    border-radius: 50%;
+    position: absolute;
+    left: 40px;
+    top: 15px;
+}
+
+.winter-tree {
+    margin-bottom: 20px;
+    animation: sway 3s ease-in-out infinite;
+}
+
+@keyframes sway {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(2deg); }
+} 
